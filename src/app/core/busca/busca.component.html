@@ -1,0 +1,22 @@
+<main>
+  <img loading="lazy" src="../../../assets/names.png" alt="Nomes Brasileiros" class="side-img">
+
+<form [formGroup]="form">
+  <h1>Os Nomes no Brasil.</h1>
+  <h2>Faça uma busca e veja a frequência dos nomes no País.</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Input</mat-label>
+        <label for="search" class="sr-only">Nome</label>
+        <input placeholder="Insira um nome" formControlName="nome" id="search" matInput>
+      </mat-form-field>
+
+      <ng-container>
+        <button class="button" (click)="searchByName()">Search</button>
+        <c-spinner color="light"></c-spinner>
+      </ng-container>
+</form>
+
+<div class="alert-error" #alertError>
+  Digite apenas o primeiro nome
+</div>
+</main>

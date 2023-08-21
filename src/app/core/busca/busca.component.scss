@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.side-img {
+    max-inline-size: 100%;
+    block-size: auto;
+    width: clamp(11rem + 40vw, 15rem, 14rem + 20vw);
+    height: auto;
+    flex: 1;
+    opacity: 0.8;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: stretch;
+    background-color: #faebd7e5;
+}
+
+form {
+    padding: 0 136px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 2.2rem;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: #262529;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1:hover {
+    color:  #23212a;
+    opacity: 0.8;
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+button {
+    margin-top: -22px;
+    width: 210px;
+    border: none;
+    border-radius: 0px 0px 8px 8px;
+    padding: 20px;
+    background-color: #23212a;
+    color: #ffff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #36343b;
+}
+
+button, input {
+    font-family: 'Roboto Slab', serif;
+}
+
+
+.alert-error.open {
+    visibility: visible;
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+
+.alert-error {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    background-color: #3b3b3b;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 8px 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transform: translateY(-30px);
+    transition: transform .5s;
+
+    text-transform: uppercase;
+  }
+
+@media (max-width: 900px) {
+    img {
+        min-width: 80%;
+        max-height: 20rem;
+        margin-top: 20px;
+        border-radius: 50%;
+        display: grid;
+        align-self: center;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    form {
+        padding: 0 0 10px 0;
+    }
+}

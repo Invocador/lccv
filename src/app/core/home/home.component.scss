@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+main {
+    padding: 128px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #faebd7e5;
+    position: inherit;
+}
+
+img {
+    width: 80%;
+    height: 80%;
+    position: relative;
+    z-index: 1;
+    border-radius: 40%;
+    align-self: center;
+}
+
+@media (max-width: 900px) {
+
+    img {
+        width: 420px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}

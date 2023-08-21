@@ -1,0 +1,33 @@
+<main class="datafound" *ngIf="dadosNome">
+    <header>
+      <h1>Nome: {{ dadosNome.nome }}</h1>
+      <h2>Localidade: {{ dadosNome.localidade }}</h2>
+    </header>
+    <table>
+      <thead>
+
+        <tr>
+          <th>Período</th>
+          <th>Frequência</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let dado of dadosNome.res">
+           <td class="periodo">{{dado.periodo}}</td>
+           <td class="frequencia">{{dado.frequencia}}</td>
+      </tr>
+      </tbody>
+  </table>
+  <button class='found' (click)="retornaParaBusca()">voltar</button>
+</main>
+
+<main class="datanot-found" *ngIf="!dadosNome">
+
+    <p>Talvez o nome não estivesse na moda...</p>
+    <div>
+      <h1 class="title">Não foram encontrados registros com esse nome.</h1>
+    </div>
+    <button class='notfound' (click)="retornaParaBusca()">voltar</button>
+
+</main>
+
