@@ -1,24 +1,21 @@
 <main class="datafound" *ngIf="dadosNome">
     <header>
-      <h1 class="name-title">Nome: {{ dadosNome.nome }}</h1>
-      <h2 class="location-title">Localidade: {{ dadosNome.localidade }}</h2>
+        <h1 class="name-title">Nome: {{ dadosNome.nome }}</h1>
+        <h2 class="location-title">Localidade: {{ dadosNome.localidade }}</h2>
     </header>
     <table>
-      <thead>
-        <tr>
-          <th>Período</th>
-          <th>Frequência</th>
-        </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let dado of dadosNome.res">
-           <td class="periodo">{{dado.periodo.split('[').join('').split(',').join(', ')}}</td>
-           <td class="frequencia">{{dado.frequencia}}</td>
-      </tr>
-      </tbody>
-  </table>
-  <button class='button' (click)="retornaParaBusca()">voltar</button>
+        <thead>
+            <tr>
+                <th>Período</th>
+                <th>Frequência</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dado of dadosNome.res">
+                <td class="periodo">{{dado.periodo.split('[').join('').split(',').join(' - ')}}</td>
+                <td class="frequencia">{{dado.frequencia}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class='button' (click)="retornaParaBusca()">voltar</button>
 </main>
-
-
-
