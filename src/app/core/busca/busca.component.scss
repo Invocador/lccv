@@ -56,10 +56,10 @@
 }
 
 .button {
-    margin-top: -22px;
+    // margin-top: -22px;
     width: 210px;
     border: none;
-    border-radius: 0px 0px 8px 8px;
+    border-radius: 8px;
     padding: 20px;
     background-color: #23212a;
     color: #ffff;
@@ -75,7 +75,6 @@
 .button, input {
     font-family: 'Roboto Slab', serif;
 }
-
 
 .alert-error.open {
     visibility: visible;
