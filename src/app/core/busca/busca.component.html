@@ -1,22 +1,43 @@
-<main>
+<main class="search-container">
   <img loading="lazy" src="../../../assets/names.png" alt="Nomes Brasileiros" class="side-img">
 
-<form [formGroup]="form">
-  <h1>Os Nomes no Brasil.</h1>
-  <h2>Faça uma busca e veja a frequência dos nomes no País.</h2>
+<form [formGroup]="form" class="search-form">
+  <h1 class="title">Os Nomes no Brasil.</h1>
+  <h2 class="title-desc">Faça uma busca e veja a frequência dos nomes no País.</h2>
     <mat-form-field appearance="outline">
         <mat-label>Input</mat-label>
         <label for="search" class="sr-only">Nome</label>
         <input placeholder="Insira um nome" formControlName="nome" id="search" matInput>
       </mat-form-field>
 
-      <ng-container>
-        <button class="button" (click)="searchByName()">Search</button>
-        <c-spinner color="light"></c-spinner>
-      </ng-container>
+        <button  class="button" (click)="searchByName()">
+          <ng-container *ngIf="!isLoading">
+            Search
+          </ng-container>
+
+          <ng-container *ngIf="isLoading">
+            <c-spinner color="light" sm="sm"></c-spinner>
+          </ng-container>
+        </button>
+
+        <c-modal class="modal" id="liveDemoModal" [visible]="visible">
+          <c-modal-header class="header">
+            <h5 cModalTitle class="modal-title">O nome inserido não foi encontrado
+              <svg cIcon name="cilSad" size="lg" title="Sad Face Icon" class="sad"></svg>
+            </h5>
+          </c-modal-header>
+          <c-modal-body class="modal-msg">Porfavor, tente novamente.</c-modal-body>
+          <c-modal-footer>
+            <button class="modal-button" (click)="toggleLiveDemo()" cButton color="secondary">
+              Close
+            </button>
+          </c-modal-footer>
+        </c-modal>
+
 </form>
 
-<div class="alert-error" #alertError>
-  Digite apenas o primeiro nome
-</div>
+  <div class="alert-error" #alertError>
+    Digite apenas o primeiro nome
+  </div>
 </main>
+

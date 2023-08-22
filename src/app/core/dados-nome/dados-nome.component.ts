@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from '@angular/router';
-import { BuscaService } from "../services/busca.service";
-import { take } from "rxjs";
+import { Router } from '@angular/router';
 import { DadosInterface } from "../interfaces/dados.interface";
+import { Location } from "@angular/common";
 
 @Component ({
       selector: 'app-dados-nome',
@@ -10,23 +9,20 @@ import { DadosInterface } from "../interfaces/dados.interface";
       styleUrls: ['./dados-nome.component.scss']
 })
 export class DadosComponent implements OnInit {
-    dadosNome!: DadosInterface;
+    dadosNome?: DadosInterface;
+
     constructor(private router: Router,
-        private route: ActivatedRoute,
-        private buscaService: BuscaService
+        private location: Location
         ) {};
 
     ngOnInit(): void {
-        this.buscaPorNome();
+        this.dadosNome = this.location.getState() as DadosInterface;
     };
-        retornaParaBusca() :void {
-            this.router.navigateByUrl('/home/busca');
-        }
-        buscaPorNome() :void {
-            const nome = this.route.params.pipe(take(1)).subscribe(({ nome }) => {
-                this.buscaService.buscaPorNome(nome).subscribe((res) => {
-                    this.dadosNome = res[0];
-                });
-            });
-        }
+
+    retornaParaBusca() :void {
+        this.router.navigateByUrl('/home/busca');
     }
+
+}
+
+// {{dado.periodo.split('[').join('').split(',').join(', ')}}

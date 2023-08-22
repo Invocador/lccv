@@ -9,8 +9,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-main {
+home {
     padding: 128px;
     min-height: 100vh;
     display: flex;
@@ -20,7 +19,7 @@ main {
     position: inherit;
 }
 
-img {
+.names {
     width: 80%;
     height: 80%;
     position: relative;
@@ -31,14 +30,7 @@ img {
 
 @media (max-width: 900px) {
 
-    img {
+    .names {
         width: 420px;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 16px;
     }
 }

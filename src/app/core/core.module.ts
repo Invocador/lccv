@@ -10,7 +10,8 @@ import{ MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { DadosComponent } from "./dados-nome/dados-nome.component";
 import { CommonModule } from "@angular/common";
-import { SpinnerComponent  } from '@coreui/angular';
+import { SpinnerModule, ModalModule } from '@coreui/angular';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
 
 
 const MATERIAL_MODULES = [MatFormFieldModule, MatInputModule, MatSelectModule];
@@ -23,8 +24,10 @@ const MATERIAL_MODULES = [MatFormFieldModule, MatInputModule, MatSelectModule];
         ...MATERIAL_MODULES,
         HttpClientModule,
         CommonModule,
-        SpinnerComponent],
-    providers: [],
+        SpinnerModule,
+        ModalModule,
+        IconModule],
+    providers: [IconSetService],
     exports: [BuscaComponent, DadosComponent, ...MATERIAL_MODULES]
 })
 

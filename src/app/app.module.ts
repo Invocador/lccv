@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { SpinnerComponent  } from '@coreui/angular';
+import { SpinnerModule, ModalModule} from '@coreui/angular';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,11 @@ import { SpinnerComponent  } from '@coreui/angular';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
-    SpinnerComponent
+    SpinnerModule,
+    ModalModule,
+    IconModule,
   ],
-  providers: [],
+  providers: [IconSetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
